@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Lines (list) -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M4,6h12v2H4z" />
+
+    <path
+        android:fillColor="#000000"
+        android:pathData="M4,11h12v2H4z" />
+
+    <path
+        android:fillColor="#000000"
+        android:pathData="M4,16h8v2H4z" />
+
+    <!-- Music note -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M18,5v9.5a1.5,1.5 0 1,1 -1,-1.4V7h-2V5h3z" />
+
+</vector>
