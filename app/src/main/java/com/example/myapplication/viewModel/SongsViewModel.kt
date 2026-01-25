@@ -10,11 +10,14 @@ class SongsViewModel : ViewModel() {
     private val songDetails = MutableLiveData<Songs>()
     private var songsListData = SongsListData().getSongDetails()
     private var currentIndex = 0
-    private val _selectedSong = MutableLiveData<Songs>()
-    private var selectedSong: LiveData<Songs> = _selectedSong
+
+    init {
+        songDetails.value = songsListData[currentIndex]
+    }
     fun selectSong(songs: Songs)
     {
-        _selectedSong.value = songs
+        currentIndex = songsListData.indexOf(songs)
+        songDetails.value = songs
     }
 
     fun  songDetails(): LiveData<Songs>

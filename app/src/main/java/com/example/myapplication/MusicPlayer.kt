@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import com.example.myapplication.MusicTab.MusicTab
 import com.example.myapplication.databinding.FragmentMusicPlayerBinding
 import com.example.myapplication.musiclist.MusicList
 import com.example.myapplication.viewModel.SongsViewModel
@@ -41,8 +42,9 @@ class MusicPlayer : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.songName.isSelected = true
         viewModel.songDetails().observe(viewLifecycleOwner,{song ->
-            binding.musicTitile.text = song.songName
+            binding.songName.text = song.songName
             binding.singerName.text = song.singerName
         })
         binding.next.setOnClickListener {
@@ -55,6 +57,13 @@ class MusicPlayer : Fragment() {
             val songListFragment = MusicList()
             parentFragmentManager.beginTransaction()
                 .replace(R.id.main_container, songListFragment)
+                .addToBackStack(null)
+                .commit()
+        }
+        binding.backarrow.setOnClickListener {
+            val musictab = MusicTab()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.main_container,musictab)
                 .addToBackStack(null)
                 .commit()
         }
