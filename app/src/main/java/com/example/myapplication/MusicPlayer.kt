@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -55,6 +56,7 @@ class MusicPlayer : Fragment() {
         }
         binding.songlist.setOnClickListener {
             val songListFragment = MusicList()
+            Log.d("Ravi","This is Ravit")
             parentFragmentManager.beginTransaction()
                 .replace(R.id.main_container, songListFragment)
                 .addToBackStack(null)
